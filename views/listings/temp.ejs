@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <h1>listings.title</h1>
+    <div class="card col-12 offset-2">
+      <img src="<%= listings.image%>" class="card-img-top show-img" alt="listing_image">
+      <div class="card-body">
+        <h5 class="card-title"><%= listings.title %></h5>
+        <p class="card-text"><%= listings.description %></p>
+      </div>
+
+      <ul>
+        <li><%= listings.description %></li>
+        <li>
+  &#8377 
+  <%= listings.price ? listings.price.toLocaleString("en-IN") : "Not available" %>
+</li>
+
+        <li><%= listings.location %></li>
+        <li><%= listings.country %></li>
+      </ul>
+
+      <br>
+      <a href="/listings/<%= listings._id %>/edit " class="btn btn-dark mb-3 add-btn">Edit this listing</a>
+      <br>
+      <form  method="POST" action="/listings/<%=listings._id%>?_method=DELETE" class="btn btn-dark mb-3"><button>Delete</button></form>
+    </div>
+  </div>
+  <div>
+    <hr>
+    <h4>leave a Review</h4>
+    <form action="">
+      <div>
+        <label for="rating" class="form-label">Rating</label>
+        <input type="range" id="rating" class="form-range" name="review[rating]" min="1" max="5">
+      </div>
+      <div>
+        <label for="comment" class="form-control"> Comments</label>
+        <textarea name="review[commetn]" id="comment" cols="30" rows="5"></textarea>
+       
+      </div>
+      <button class="btn btn-outline-dark" >Submit</button>
+    </form>
+  </div>
+</div>
