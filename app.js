@@ -78,9 +78,6 @@ app.use((req, res, next) => {
 //    let regUser = await User.register(fakeUser, "helloworld");
 //    res.send(regUser);
 // });
-app.get("/", (req, res) => {
-  res.send("hii there");
-});
 
 
 

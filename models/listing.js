@@ -21,13 +21,13 @@ const listingSchema = new Schema({
   location: String,
   country: String,
 
-    // ✅ Add this field:
+  // ✅ Add this field:
   owner: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
 
-  reviews  : [
+  reviews: [
     {
       type: Schema.Types.ObjectId,
       ref: "Review",
